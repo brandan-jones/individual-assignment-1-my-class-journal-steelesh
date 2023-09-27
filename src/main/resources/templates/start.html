@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal Entry #1</title>
+</head>
+<style>
+    body {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        background: #1a1a1a;
+        color: white;
+        font-family: monospace;
+    }
+    #journalentry-meta-container {
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    #content {
+        margin-top: 2rem;
+    }
+</style>
+<body>
+<h1 th:text="${journalEntry.getTitle()}"></h1>
+<div id="journalentry-meta-container">
+    <p th:text="${journalEntry.getDate()}"></p>
+    <p> | </p>
+    <p th:text="${journalEntry.getAuthor()}" />
+</div>
+<div id="content">
+    <img src="https://avatars.githubusercontent.com/u/94927484?s=400&u=44901d5839a6372a14a6a25c2818f39f58813e77&v=4" alt="GitHub pfp">
+    <p th:text="${journalEntry.getNotes()}" />
+</div>
+</body>
+</html>
